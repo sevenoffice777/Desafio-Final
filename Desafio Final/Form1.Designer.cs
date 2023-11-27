@@ -29,6 +29,9 @@ namespace Desafio_Final
         /// </summary>
         private void InitializeComponent()
         {
+
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Btn_login = new System.Windows.Forms.Button();
             this.Btn_signup = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,8 +75,9 @@ namespace Desafio_Final
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_signup);
             this.Controls.Add(this.Btn_login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "7Code Hub";
             this.ResumeLayout(false);
             this.PerformLayout();
 
