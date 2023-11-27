@@ -15,12 +15,24 @@ namespace Desafio_Final
             CarregarFonte();
             StyleButton(Btn_login);
             StyleButton(Btn_signup);
+            StyleTitle(label1);
         }
 
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
             privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+        }
+
+
+
+        private void StyleTitle(Label labelTitle)
+        {
+            Font minhaFonte = new Font(privateFontCollection.Families[0], 40, FontStyle.Regular);
+
+            labelTitle.Font = minhaFonte;
+            labelTitle.ForeColor = Color.White;
+            labelTitle.BackColor = Color.Transparent;
         }
 
         public void StyleButton(Button button)
@@ -47,9 +59,9 @@ namespace Desafio_Final
             button.BackColor = Color.Transparent;
             button.ForeColor = Color.White;
             button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 1;
+            button.FlatAppearance.BorderSize = 2;
             button.FlatAppearance.BorderColor = Color.White;
-            button.Padding = new Padding(10, 5, 10, 5);
+            button.Padding = new Padding(2);
         }
 
         private void Btn_login_Click(object sender, EventArgs e)
