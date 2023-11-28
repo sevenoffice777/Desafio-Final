@@ -66,13 +66,19 @@ namespace Desafio_Final
 
         private void Btn_login_Click(object sender, EventArgs e)
         {
-            
+
             // Lógica para o clique no botão de login
+            Form2 formLogin = new Form2();
+            this.Hide();
+            formLogin.ShowDialog();
         }
 
         private void Btn_signup_Click(object sender, EventArgs e)
         {
             // Lógica para o clique no botão de signup
+            Form3 formSignup = new Form3();
+            this.Hide();
+            formSignup.ShowDialog();
         }
 
         

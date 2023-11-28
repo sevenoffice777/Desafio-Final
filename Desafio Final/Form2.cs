@@ -35,6 +35,7 @@ namespace Desafio_Final
 
         private void StyleText(Label labelText)
         {
+
             Font minhaFonte = new Font(privateFontCollection.Families[0], 12, FontStyle.Regular);
             labelText.Location = new System.Drawing.Point(50, 256);
             labelText.Font = minhaFonte;
@@ -83,6 +84,16 @@ namespace Desafio_Final
             button.Padding = new Padding(2);
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_linkForm3_Click(object sender, EventArgs e)
+        {
+            Form3 formStart = new Form3();
+            this.Hide();
+            formStart.ShowDialog();
+        }
     }
 }

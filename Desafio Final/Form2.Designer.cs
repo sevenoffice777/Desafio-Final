@@ -1,4 +1,14 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Text;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Desafio_Final
 {
     partial class Form2
@@ -33,11 +43,12 @@ namespace Desafio_Final
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.userTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_linkForm3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +60,6 @@ namespace Desafio_Final
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
-            
             // 
             // label2
             // 
@@ -75,14 +85,19 @@ namespace Desafio_Final
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
-            // button1
+            // passwordTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(432, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.passwordTextBox.Location = new System.Drawing.Point(7, 142);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(324, 20);
+            this.passwordTextBox.TabIndex = 5;
+            // 
+            // userTextBox
+            // 
+            this.userTextBox.Location = new System.Drawing.Point(7, 66);
+            this.userTextBox.Name = "userTextBox";
+            this.userTextBox.Size = new System.Drawing.Size(324, 20);
+            this.userTextBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -102,19 +117,37 @@ namespace Desafio_Final
             this.label4.TabIndex = 0;
             this.label4.Text = "Senha";
             // 
-            // userTextBox
+            // button1
             // 
-            this.userTextBox.Location = new System.Drawing.Point(7, 66);
-            this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(324, 20);
-            this.userTextBox.TabIndex = 4;
+            this.button1.Location = new System.Drawing.Point(432, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(337, 39);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Entrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // passwordTextBox
+            // lbl_linkForm3
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(7, 142);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(324, 20);
-            this.passwordTextBox.TabIndex = 5;
+            PrivateFontCollection privateFontCollection = new PrivateFontCollection();
+            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            Font minhaFonte = new Font(privateFontCollection.Families[0], 12, FontStyle.Regular);
+
+            this.lbl_linkForm3.Font = minhaFonte;
+            this.lbl_linkForm3.ForeColor = Color.White;
+            this.lbl_linkForm3.BackColor = Color.Transparent;
+            this.lbl_linkForm3.AutoSize = true;
+            this.lbl_linkForm3.Location = new System.Drawing.Point(530, 364);
+            this.lbl_linkForm3.Name = "lbl_linkForm3";
+            this.lbl_linkForm3.Size = new System.Drawing.Size(98, 13);
+            this.lbl_linkForm3.TabIndex = 3;
+            this.lbl_linkForm3.Text = "É novo? Cadastrar!";
+            this.lbl_linkForm3.Click += new System.EventHandler(this.lbl_linkForm3_Click);
+
+            this.lbl_linkForm3.MouseEnter += (sender, e) =>
+            {
+                this.lbl_linkForm3.Cursor = Cursors.Hand;
+            };
             // 
             // Form2
             // 
@@ -122,6 +155,7 @@ namespace Desafio_Final
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Desafio_Final.Properties.Resources.background_container2;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_linkForm3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -146,5 +180,6 @@ namespace Desafio_Final
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_linkForm3;
     }
 }
