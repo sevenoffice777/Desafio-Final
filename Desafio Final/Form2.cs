@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Desafio_Final
 {
@@ -86,7 +87,40 @@ namespace Desafio_Final
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string nome = userTextBox.Text;
+            string password = passwordTextBox.Text;
 
+
+            string conn = "Server=localhost;Database=7code;User=root;";
+            string insertSQL = "SELECT * FROM userData WHERE nome = @Usuario and senha = @Senha";
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                {
+                    // Adiciona os parâmetros à consulta SQL
+                    command.Parameters.AddWithValue("@Usuario", nome);
+                    command.Parameters.AddWithValue("@Senha", password);
+
+                    // Executa o comando SQL
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Verifica se há linhas retornadas
+                        if (reader.Read())
+                        {
+                            Form4 formCRUD = new Form4();
+                            this.Hide();
+                            formCRUD.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuário ou senha incorretos.");
+                        }
+                    }
+                }
+            }
         }
 
         private void lbl_linkForm3_Click(object sender, EventArgs e)

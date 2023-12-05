@@ -111,8 +111,9 @@ namespace Desafio_Final
 
                     // Executa o comando SQL
                     command.ExecuteNonQuery();
-
-                    MessageBox.Show("Cadastro Realizado com Sucesso!");
+                    Form2 formLogin = new Form2();
+                    this.Hide();
+                    formLogin.ShowDialog();
                 }
             }
         }
