@@ -60,7 +60,6 @@ namespace Desafio_Final
             this.titleLbl.Size = new System.Drawing.Size(66, 13);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "CADASTRO";
-            this.titleLbl.Click += new System.EventHandler(this.titleLbl_Click);
             // 
             // textLbl
             // 
@@ -70,7 +69,6 @@ namespace Desafio_Final
             this.textLbl.Size = new System.Drawing.Size(248, 13);
             this.textLbl.TabIndex = 1;
             this.textLbl.Text = "Coloque suas credenciais para cadastrar na 7Code";
-            this.textLbl.Click += new System.EventHandler(this.textLbl_Click);
             // 
             // btn_signup
             // 
@@ -88,7 +86,6 @@ namespace Desafio_Final
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(269, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -112,7 +109,6 @@ namespace Desafio_Final
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label4
             // 
@@ -134,23 +130,15 @@ namespace Desafio_Final
             // 
             // lbl_linkForm2
             // 
-            PrivateFontCollection privateFontCollection = new PrivateFontCollection();
-            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
-            Font minhaFonte = new Font(privateFontCollection.Families[0], 12, FontStyle.Regular);
-            this.lbl_linkForm2.Font = minhaFonte;
-            this.lbl_linkForm2.ForeColor = Color.White;
-            this.lbl_linkForm2.BackColor = Color.Transparent;
             this.lbl_linkForm2.AutoSize = true;
+            this.lbl_linkForm2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_linkForm2.ForeColor = System.Drawing.Color.White;
             this.lbl_linkForm2.Location = new System.Drawing.Point(500, 348);
             this.lbl_linkForm2.Name = "lbl_linkForm2";
-            this.lbl_linkForm2.Size = new System.Drawing.Size(131, 13);
+            this.lbl_linkForm2.Size = new System.Drawing.Size(202, 19);
             this.lbl_linkForm2.TabIndex = 3;
             this.lbl_linkForm2.Text = "Já tem uma conta? Entrar!";
             this.lbl_linkForm2.Click += new System.EventHandler(this.lbl_linkForm2_Click);
-            this.lbl_linkForm2.MouseEnter += (sender, e) =>
-            {
-                this.lbl_linkForm2.Cursor = Cursors.Hand;
-            };
             // 
             // Form3
             // 
@@ -165,7 +153,6 @@ namespace Desafio_Final
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "7Code Hub - Cadastro";
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

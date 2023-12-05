@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Desafio_Final
 {
@@ -82,41 +83,38 @@ namespace Desafio_Final
         }
 
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_signup_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titleLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textLbl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lbl_linkForm2_Click(object sender, EventArgs e)
         {
             Form2 formLogin = new Form2();
             this.Hide();
             formLogin.ShowDialog();
+        }
+
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            string nome = textBox1.Text;
+            string password = textBox2.Text;
+
+            string conn = "Server=localhost;Database=7code;User=root;";
+            string insertSQL = "INSERT INTO userData(nome, senha) VALUES (@Usuario, @Senha)";
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                {
+                    // Adiciona os parâmetros à consulta SQL
+                    command.Parameters.AddWithValue("@Usuario", nome);
+                    command.Parameters.AddWithValue("@Senha", password);
+
+                    // Executa o comando SQL
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Cadastro Realizado com Sucesso!");
+                }
+            }
         }
     }
 }

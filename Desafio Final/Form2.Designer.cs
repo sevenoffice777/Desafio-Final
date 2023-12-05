@@ -144,10 +144,7 @@ namespace Desafio_Final
             this.lbl_linkForm3.Text = "É novo? Cadastrar!";
             this.lbl_linkForm3.Click += new System.EventHandler(this.lbl_linkForm3_Click);
 
-            this.lbl_linkForm3.MouseEnter += (sender, e) =>
-            {
-                this.lbl_linkForm3.Cursor = Cursors.Hand;
-            };
+            
             // 
             // Form2
             // 
