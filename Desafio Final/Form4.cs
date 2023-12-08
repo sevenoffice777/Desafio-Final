@@ -20,6 +20,15 @@ namespace Desafio_Final
         public Form4()
         {
             InitializeComponent();
+            CarregarFonte();
+            StyleTitle(title_cad_lbl);
+            StyleText(txtCad_lbl);
+            StyleText(cod_curso_lbl);
+            StyleText(drc_lbl);
+            StyleText(nme_curso_lbl);
+            StyleText(prc_curso_lbl);
+            StyleText(dscr_curso_lbl);
+
         }
 
 
@@ -89,15 +98,10 @@ namespace Desafio_Final
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_cad_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
