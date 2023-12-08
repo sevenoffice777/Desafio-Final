@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `userdata`
 --
 
+CREATE DATABASE ``7code`;
+
+USE DATABASE `7code`;
+ 
 CREATE TABLE `userdata` (
   `id_user` int(11) NOT NULL,
   `nome` varchar(90) DEFAULT NULL,

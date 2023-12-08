@@ -110,7 +110,7 @@ namespace Desafio_Final
                         // Verifica se há linhas retornadas
                         if (reader.Read())
                         {
-                            Form4 formCRUD = new Form4();
+                            options formCRUD = new options();
                             this.Hide();
                             formCRUD.ShowDialog();
                         }
