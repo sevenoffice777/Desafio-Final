@@ -108,6 +108,13 @@ namespace Desafio_Final
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            options opt = new options();
+            this.Hide();
+            opt.Show();
+        }
     }
 
 }
