@@ -48,7 +48,7 @@ namespace Desafio_Final
             // 
             // upd_btn
             // 
-            this.upd_btn.Location = new System.Drawing.Point(24, 189);
+            this.upd_btn.Location = new System.Drawing.Point(24, 268);
             this.upd_btn.Name = "upd_btn";
             this.upd_btn.Size = new System.Drawing.Size(314, 39);
             this.upd_btn.TabIndex = 1;
@@ -58,11 +58,11 @@ namespace Desafio_Final
             // 
             // slct_btn
             // 
-            this.slct_btn.Location = new System.Drawing.Point(26, 276);
+            this.slct_btn.Location = new System.Drawing.Point(26, 188);
             this.slct_btn.Name = "slct_btn";
             this.slct_btn.Size = new System.Drawing.Size(312, 36);
             this.slct_btn.TabIndex = 2;
-            this.slct_btn.Text = "BUSCAR";
+            this.slct_btn.Text = "CONSULTAR";
             this.slct_btn.UseVisualStyleBackColor = true;
             this.slct_btn.Click += new System.EventHandler(this.slct_btn_Click);
             // 
@@ -87,6 +87,7 @@ namespace Desafio_Final
             this.Controls.Add(this.Cad_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "options";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "7CODE -OPÇÕES";
             this.ResumeLayout(false);
             this.PerformLayout();

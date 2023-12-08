@@ -19,6 +19,17 @@ namespace Desafio_Final
         public Form5()
         {
             InitializeComponent();
+            CarregarFonte();
+            StyleTitle(title_slct_lbl);
+            StyleText(codCurso_Slct_lbl);
+            StyleButton(btn_slct);
+            StyleButton(btn_updt);
+            StyleTitle(title_groupBox_lbl);
+            StyleText(cod_curso_lbl);
+            StyleText(name_lbl);
+            StyleText(preco_lbl);
+            StyleText(desc_lbl);
+            StyleText(duracao_lbl);
         }
 
 
@@ -26,7 +37,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -85,6 +96,22 @@ namespace Desafio_Final
         }
 
         private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_slct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btn_updt_Click(object sender, EventArgs e)
         {
 
         }

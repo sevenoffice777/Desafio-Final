@@ -30,7 +30,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -98,14 +98,14 @@ namespace Desafio_Final
 
         private void upd_btn_Click(object sender, EventArgs e)
         {
-            Form5 formUpd = new Form5();
+            Form6 formUpd = new Form6();
             this.Hide();
             formUpd.ShowDialog();
         }
 
         private void slct_btn_Click(object sender, EventArgs e)
         {
-            Form6 formSlct = new Form6();
+            Form5 formSlct = new Form5();
             this.Hide();
             formSlct.ShowDialog();
         }

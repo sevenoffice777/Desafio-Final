@@ -28,6 +28,7 @@ namespace Desafio_Final
             StyleText(nme_curso_lbl);
             StyleText(prc_curso_lbl);
             StyleText(dscr_curso_lbl);
+            StyleButton(btn_cad);
 
         }
 
@@ -36,7 +37,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -103,5 +104,10 @@ namespace Desafio_Final
 
         }
 
+        private void prc_curso_txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
