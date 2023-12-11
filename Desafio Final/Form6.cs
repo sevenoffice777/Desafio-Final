@@ -132,11 +132,14 @@ namespace Desafio_Final
                 string query = "SELECT * FROM cursos WHERE cod_curso = @cod_curso";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@cod_curso", cod_curso);
+
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             // Substitua "nome", "cod_curso", "duracao", "preco", "desc_curso" pelos nomes reais das colunas na sua tabela
+
                             string nome_ref = reader["nome"].ToString();
                             string cod_curso_ref = reader["cod_curso"].ToString();
                             string duracao_ref = reader["duracao"].ToString();

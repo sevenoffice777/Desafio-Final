@@ -17,7 +17,7 @@ namespace Desafio_Final
     {
         PrivateFontCollection privateFontCollection = new PrivateFontCollection();
 
-        public Form5(dataCurso curso)
+        public Form5(dataCurso curso = null)
         {
             InitializeComponent();
             CarregarFonte();
@@ -32,8 +32,14 @@ namespace Desafio_Final
             StyleText(desc_lbl);
             StyleText(duracao_lbl);
             
-            if(curso)
+            if(curso != null)
             {
+                cod_curso_txtBox.Text = curso.cod_curso;
+                cod_curso_ref_lbl.Text = curso.cod_curso;
+                name_ref_lbl.Text = curso.nome;
+                preco_ref_lbl.Text = curso.preco;
+                duracao_ref_lbl.Text = curso.duracao;
+                desc_ref_lbl.Text = curso.desc_curso;
 
             }
         }
@@ -111,24 +117,43 @@ namespace Desafio_Final
             string cod_curso = cod_curso_txtBox.Text;
 
             string conn = "Server=localhost;Database=7code;User=root;";
-            string insertSQL = "select * from cursos where cod_curso = @cod_curso";
-
             using (MySqlConnection connection = new MySqlConnection(conn))
             {
                 connection.Open();
 
-                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                string query = "SELECT * FROM cursos WHERE cod_curso = @cod_curso";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@cod_curso", cod_curso);
-                    
-                    // PESQUISAR OUTRO COMANDO
 
-                    command.ExecuteNonQuery();
-                    
-                    
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Substitua "nome", "cod_curso", "duracao", "preco", "desc_curso" pelos nomes reais das colunas na sua tabela
+
+                            name_ref_lbl.Text = reader["nome"].ToString();
+                            cod_curso_ref_lbl.Text = reader["cod_curso"].ToString();
+                            duracao_ref_lbl.Text = reader["duracao"].ToString();
+                            preco_ref_lbl.Text = reader["preco"].ToString();
+                            desc_ref_lbl.Text= reader["desc_curso"].ToString();
+
+
+                           
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Nenhum registro encontrado.");
+                        }
+                    }
                 }
+
+
             }
         }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -138,7 +163,9 @@ namespace Desafio_Final
 
         private void btn_updt_Click(object sender, EventArgs e)
         {
-
+            Form6 formUPDATE = new Form6();
+            this.Hide();
+            formUPDATE.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -146,6 +173,11 @@ namespace Desafio_Final
             options opt = new options();
             this.Hide();
             opt.Show();
+        }
+
+        private void name_ref_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

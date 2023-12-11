@@ -131,11 +131,11 @@ namespace Desafio_Final
             // 
             this.desc_ref_lbl.AutoSize = true;
             this.desc_ref_lbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.desc_ref_lbl.Location = new System.Drawing.Point(343, 335);
+            this.desc_ref_lbl.Location = new System.Drawing.Point(295, 334);
             this.desc_ref_lbl.Name = "desc_ref_lbl";
-            this.desc_ref_lbl.Size = new System.Drawing.Size(55, 13);
+            this.desc_ref_lbl.Size = new System.Drawing.Size(103, 13);
             this.desc_ref_lbl.TabIndex = 14;
-            this.desc_ref_lbl.Text = "________";
+            this.desc_ref_lbl.Text = "________________";
             // 
             // duracao_lbl
             // 
@@ -151,11 +151,11 @@ namespace Desafio_Final
             // 
             this.duracao_ref_lbl.AutoSize = true;
             this.duracao_ref_lbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.duracao_ref_lbl.Location = new System.Drawing.Point(343, 271);
+            this.duracao_ref_lbl.Location = new System.Drawing.Point(295, 271);
             this.duracao_ref_lbl.Name = "duracao_ref_lbl";
-            this.duracao_ref_lbl.Size = new System.Drawing.Size(55, 13);
+            this.duracao_ref_lbl.Size = new System.Drawing.Size(103, 13);
             this.duracao_ref_lbl.TabIndex = 12;
-            this.duracao_ref_lbl.Text = "________";
+            this.duracao_ref_lbl.Text = "________________";
             // 
             // preco_lbl
             // 
@@ -171,11 +171,11 @@ namespace Desafio_Final
             // 
             this.preco_ref_lbl.AutoSize = true;
             this.preco_ref_lbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.preco_ref_lbl.Location = new System.Drawing.Point(343, 214);
+            this.preco_ref_lbl.Location = new System.Drawing.Point(295, 216);
             this.preco_ref_lbl.Name = "preco_ref_lbl";
-            this.preco_ref_lbl.Size = new System.Drawing.Size(55, 13);
+            this.preco_ref_lbl.Size = new System.Drawing.Size(103, 13);
             this.preco_ref_lbl.TabIndex = 10;
-            this.preco_ref_lbl.Text = "________";
+            this.preco_ref_lbl.Text = "________________";
             // 
             // name_lbl
             // 
@@ -191,11 +191,12 @@ namespace Desafio_Final
             // 
             this.name_ref_lbl.AutoSize = true;
             this.name_ref_lbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.name_ref_lbl.Location = new System.Drawing.Point(343, 152);
+            this.name_ref_lbl.Location = new System.Drawing.Point(295, 152);
             this.name_ref_lbl.Name = "name_ref_lbl";
-            this.name_ref_lbl.Size = new System.Drawing.Size(55, 13);
+            this.name_ref_lbl.Size = new System.Drawing.Size(103, 13);
             this.name_ref_lbl.TabIndex = 8;
-            this.name_ref_lbl.Text = "________";
+            this.name_ref_lbl.Text = "________________";
+            this.name_ref_lbl.Click += new System.EventHandler(this.name_ref_lbl_Click);
             // 
             // cod_curso_lbl
             // 
@@ -211,11 +212,11 @@ namespace Desafio_Final
             // 
             this.cod_curso_ref_lbl.AutoSize = true;
             this.cod_curso_ref_lbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cod_curso_ref_lbl.Location = new System.Drawing.Point(343, 99);
+            this.cod_curso_ref_lbl.Location = new System.Drawing.Point(295, 99);
             this.cod_curso_ref_lbl.Name = "cod_curso_ref_lbl";
-            this.cod_curso_ref_lbl.Size = new System.Drawing.Size(55, 13);
+            this.cod_curso_ref_lbl.Size = new System.Drawing.Size(103, 13);
             this.cod_curso_ref_lbl.TabIndex = 6;
-            this.cod_curso_ref_lbl.Text = "________";
+            this.cod_curso_ref_lbl.Text = "________________";
             this.cod_curso_ref_lbl.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_updt
@@ -224,7 +225,7 @@ namespace Desafio_Final
             this.btn_updt.Name = "btn_updt";
             this.btn_updt.Size = new System.Drawing.Size(171, 41);
             this.btn_updt.TabIndex = 5;
-            this.btn_updt.Text = "ALTERAR CURSO";
+            this.btn_updt.Text = "ATUALIZAR CURSO";
             this.btn_updt.UseVisualStyleBackColor = true;
             this.btn_updt.Click += new System.EventHandler(this.btn_updt_Click);
             // 
