@@ -69,7 +69,6 @@ namespace Desafio_Final
             this.groupBox1.Size = new System.Drawing.Size(460, 418);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dscr_curso_txtbox
             // 
@@ -205,7 +204,6 @@ namespace Desafio_Final
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form6";
             this.Text = "7CODE - ATUALIZAR CURSOS";
-            this.Load += new System.EventHandler(this.Form6_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DataCurso;
 
 namespace Desafio_Final
 {
@@ -16,7 +17,7 @@ namespace Desafio_Final
     {
         PrivateFontCollection privateFontCollection = new PrivateFontCollection();
 
-        public Form5()
+        public Form5(dataCurso curso)
         {
             InitializeComponent();
             CarregarFonte();
@@ -30,6 +31,11 @@ namespace Desafio_Final
             StyleText(preco_lbl);
             StyleText(desc_lbl);
             StyleText(duracao_lbl);
+            
+            if(curso)
+            {
+
+            }
         }
 
 

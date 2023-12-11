@@ -119,32 +119,50 @@ namespace Desafio_Final
                     command.Parameters.AddWithValue("@duracao", duracao);
                     command.Parameters.AddWithValue("@preco", preco);
                     command.Parameters.AddWithValue("@desc_curso", desc_curso);
-
-
-                    // Executa o comando SQL
                     command.ExecuteNonQuery();
-                    Form5 formSelect = new Form5();
+
                     MessageBox.Show("CURSO ATUALIZADO COM SUCESSO!");
-
-                    
-                    this.Hide();
-                    formSelect.ShowDialog();
-
-
-
                 }
             }
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM cursos WHERE cod_curso = @cod_curso";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Substitua "nome", "cod_curso", "duracao", "preco", "desc_curso" pelos nomes reais das colunas na sua tabela
+                            string nome_ref = reader["nome"].ToString();
+                            string cod_curso_ref = reader["cod_curso"].ToString();
+                            string duracao_ref = reader["duracao"].ToString();
+                            string preco_ref = reader["preco"].ToString();
+                            string desc_curso_ref = reader["desc_curso"].ToString();
+
+                            // Agora você pode usar as variáveis conforme necessário, por exemplo, criando uma instância de dataCurso
+                            dataCurso curso = new dataCurso(nome_ref, cod_curso_ref, duracao_ref, preco_ref, desc_curso_ref);
+                            // Executa o comando SQL
+                            Form5 formSelect = new Form5(curso);
+                            this.Hide();
+                            formSelect.ShowDialog();
+                            // Faça o que precisar com a instância do curso
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Nenhum registro encontrado.");
+                        }
+                    }
+                }
+               
+
+            }
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form6_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
