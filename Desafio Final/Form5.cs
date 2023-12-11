@@ -37,7 +37,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -102,7 +102,26 @@ namespace Desafio_Final
 
         private void btn_slct_Click(object sender, EventArgs e)
         {
+            string cod_curso = cod_curso_txtBox.Text;
 
+            string conn = "Server=localhost;Database=7code;User=root;";
+            string insertSQL = "select * from cursos where cod_curso = @cod_curso";
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                {
+                    command.Parameters.AddWithValue("@cod_curso", cod_curso);
+                    
+                    // PESQUISAR OUTRO COMANDO
+
+                    command.ExecuteNonQuery();
+                    
+                    
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

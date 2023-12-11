@@ -9,9 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DataCurso;
 
 namespace Desafio_Final
 {
+
     public partial class Form6 : Form
     {
         PrivateFontCollection privateFontCollection = new PrivateFontCollection();
@@ -35,7 +37,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -92,9 +94,46 @@ namespace Desafio_Final
             // Use o índice 0 para acessar a fonte carregada pela PrivateFontCollection
 
         }
-        private void btn_cad_Click(object sender, EventArgs e)
+        private void btn_upd_Click(object sender, EventArgs e)
         {
+            string nome = nme_txtbox.Text;
+            string cod_curso = cod_curso_txtbox.Text;
+            string duracao = drc_txtbox.Text;
+            string preco = prc_curso_txtbox.Text;
+            string desc_curso = dscr_curso_txtbox.Text;
 
+
+
+            string conn = "Server=localhost;Database=7code;User=root;";
+            string insertSQL = "UPDATE cursos SET nome = @nome_curso, duracao = @duracao,preco = @preco, desc_curso = @desc_curso WHERE cod_curso = @cod_curso;";
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                {
+                    // Adiciona os parâmetros à consulta SQL
+                    command.Parameters.AddWithValue("@nome_curso", nome);
+                    command.Parameters.AddWithValue("@cod_curso", cod_curso);
+                    command.Parameters.AddWithValue("@duracao", duracao);
+                    command.Parameters.AddWithValue("@preco", preco);
+                    command.Parameters.AddWithValue("@desc_curso", desc_curso);
+
+
+                    // Executa o comando SQL
+                    command.ExecuteNonQuery();
+                    Form5 formSelect = new Form5();
+                    MessageBox.Show("CURSO ATUALIZADO COM SUCESSO!");
+
+                    
+                    this.Hide();
+                    formSelect.ShowDialog();
+
+
+
+                }
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

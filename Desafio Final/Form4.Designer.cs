@@ -94,7 +94,6 @@ namespace Desafio_Final
             this.prc_curso_txtbox.Name = "prc_curso_txtbox";
             this.prc_curso_txtbox.Size = new System.Drawing.Size(412, 20);
             this.prc_curso_txtbox.TabIndex = 8;
-            this.prc_curso_txtbox.TextChanged += new System.EventHandler(this.prc_curso_txtbox_TextChanged);
             // 
             // drc_txtbox
             // 
@@ -206,7 +205,6 @@ namespace Desafio_Final
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "7CODE - CADASTRO DE CURSOS";
-            this.Load += new System.EventHandler(this.Form4_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

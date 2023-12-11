@@ -86,7 +86,7 @@ namespace Desafio_Final
             this.btn_upd.TabIndex = 10;
             this.btn_upd.Text = "ATUALIZAR";
             this.btn_upd.UseVisualStyleBackColor = true;
-            this.btn_upd.Click += new System.EventHandler(this.btn_cad_Click);
+            this.btn_upd.Click += new System.EventHandler(this.btn_upd_Click);
             // 
             // prc_curso_txtbox
             // 

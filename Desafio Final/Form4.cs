@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 
+
 namespace Desafio_Final
 {
     public partial class Form4 : Form
@@ -37,7 +38,7 @@ namespace Desafio_Final
         private void CarregarFonte()
         {
             // Substitua "MinhaFonte" pelo nome real do arquivo da sua fonte (sem extensão)
-            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             // Passivo de mudança DEPENDENDO DO USUARIO E CAMINHO
 
         }
@@ -95,20 +96,46 @@ namespace Desafio_Final
 
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void btn_cad_Click(object sender, EventArgs e)
         {
+            string nome = nme_txtbox.Text;
+            string cod_curso = cod_curso_txtbox.Text;
+            string duracao = drc_txtbox.Text;
+            string preco = prc_curso_txtbox.Text;
+            string desc_curso =dscr_curso_txtbox.Text;
 
+
+
+            string conn = "Server=localhost;Database=7code;User=root;";
+            string insertSQL = "INSERT INTO cursos(nome, cod_curso, duracao, preco, desc_curso) VALUES (@nome_curso, @cod_curso, @duracao, @preco,@desc_curso)";
+
+            using (MySqlConnection connection = new MySqlConnection(conn))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(insertSQL, connection))
+                {
+                    // Adiciona os parâmetros à consulta SQL
+                    command.Parameters.AddWithValue("@nome_curso", nome);
+                    command.Parameters.AddWithValue("@cod_curso", cod_curso);
+                    command.Parameters.AddWithValue("@duracao", duracao);
+                    command.Parameters.AddWithValue("@preco", preco);
+                    command.Parameters.AddWithValue("@desc_curso", desc_curso);
+
+
+                    // Executa o comando SQL
+                    command.ExecuteNonQuery();
+                    options formOptions = new options();
+                    MessageBox.Show("CURSO CADASTRADO COM SUCESSO!");
+
+                    this.Hide();
+                    formOptions.ShowDialog();
+                }
+            }
         }
 
-        private void prc_curso_txtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             options opt = new options();

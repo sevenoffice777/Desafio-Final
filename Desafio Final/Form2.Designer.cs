@@ -130,7 +130,7 @@ namespace Desafio_Final
             // lbl_linkForm3
             // 
             PrivateFontCollection privateFontCollection = new PrivateFontCollection();
-            privateFontCollection.AddFontFile("C:/Users/Aluno/Desktop/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
+            privateFontCollection.AddFontFile("C:/Users/Aluno/source/repos/Desafio-Final/Desafio Final/assets/CaviarDreams.ttf");
             Font minhaFonte = new Font(privateFontCollection.Families[0], 12, FontStyle.Regular);
 
             this.lbl_linkForm3.Font = minhaFonte;
